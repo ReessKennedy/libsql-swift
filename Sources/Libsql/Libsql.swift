@@ -406,6 +406,7 @@ public class Database {
         url: String,
         authToken: String,
         readYourWrites: Bool = true,
+        offlineWrites: Bool = false,
         encryptionKey: String? = nil,
         syncInterval: UInt64 = 0,
         withWebpki: Bool = false
@@ -420,6 +421,7 @@ public class Database {
                         desc.auth_token = authToken
                         desc.encryption_key = encryptionKey
                         desc.disable_read_your_writes = !readYourWrites
+                        desc.synced = offlineWrites
                         desc.sync_interval = syncInterval
                         desc.webpki = withWebpki
                         
